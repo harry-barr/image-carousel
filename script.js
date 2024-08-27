@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Unit Converter</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  </html>
+let scrollContainer = document.querySelector(".gallery");
+let backBtn = document.querySelector("#backBtn");
+let nextBtn = document.querySelector("#nextBtn");
+
+scrollContainer.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  scrollContainer.scrollLeft += e.deltaY;
+  scrollContainer.style.scrollBehavior = "auto";
+});
+nextBtn.addEventListener("click", () => {
+  scrollContainer.style.scrollBehavior = "smooth";
+  scrollContainer.scrollLeft += 900;
+});
+backBtn.addEventListener("click", () => {
+  scrollContainer.style.scrollBehavior = "smooth";
+  scrollContainer.scrollLeft -= 900;
+});
